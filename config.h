@@ -19,8 +19,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=12", "JoyPixels:pixelsize=12"};
-static const char dmenufont[]       = "monospace:size=12";
+static const char *fonts[]          = { "JoyPixels:pixelsize=12:style=Bold", "monospace:size=12"};
+static const char dmenufont[]       = "JoyPixels:pixelsize=12:style=Bold";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -84,6 +84,7 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { TERMINAL, NULL };
 static const char *browsercmd[]  = { BROWSER, NULL };
+static const char *magnify[]  = { "boomer", NULL };
 static const char *fileman[]  = { FILE_MANAGER, NULL };
 static const char *brightup[]  = { BRIGHTNESS, "up", NULL };
 static const char *brightdown[]  = { BRIGHTNESS, "down", NULL };
@@ -107,6 +108,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Print,  spawn,          SHCMD(SCREENCAP) },
 	{ MODKEY|ShiftMask,             XK_r,	   spawn,          SHCMD(RANDWP) },
 	{ MODKEY|ShiftMask,             XK_h,	   spawn,          SHCMD(CONNECT_BT) },
+	{ MODKEY,						XK_v,	   spawn,          SHCMD("boomer") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
